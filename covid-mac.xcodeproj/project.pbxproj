@@ -102,9 +102,9 @@
 		BF0A580E24715AE400A63349 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				BF0A58262471688C00A63349 /* Session.swift */,
 				BF0A580C2471580800A63349 /* StatsFetching.swift */,
 				BF0A58242471686700A63349 /* StatsFetcher.swift */,
-				BF0A58262471688C00A63349 /* Session.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
