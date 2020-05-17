@@ -1,18 +1,21 @@
 import Foundation
 
-class API {
+class StatsFetcher: StatsFetching {
     private let baseURL: String = "https://coronavirus-19-api.herokuapp.com/"
-}
+    private let session: Session
+    
+    init(session: Session) {
+        self.session = session
+    }
 
-extension API: StatsFetching {
     func fetchData(for country: String, completion: @escaping StatsCompletion) {
         let path = "countries/\(country)"
         guard let url = URL(string: baseURL + path) else {
-            completion(.failure(APIError.invalidURL))
+            completion(.failure(FetchError.invalidURL))
             return
         }
         
-        let dataTask = URLSession.shared.dataTask(with: url) { data, response, error in
+        let dataTask = session.dataTask(with: url) { data, response, error in
             if let error = error {
                 completion(.failure(error))
                 return
@@ -20,7 +23,7 @@ extension API: StatsFetching {
             
             let decoder = JSONDecoder()
             guard let data = data else {
-                completion(.failure(APIError.noData))
+                completion(.failure(FetchError.noData))
                 return
             }
             

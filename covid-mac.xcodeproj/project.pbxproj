@@ -13,10 +13,21 @@
 		BF0A58022470494400A63349 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF0A58002470494400A63349 /* Main.storyboard */; };
 		BF0A580B247049BF00A63349 /* HYFTWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A580A247049BF00A63349 /* HYFTWindowController.swift */; };
 		BF0A580D2471580800A63349 /* StatsFetching.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A580C2471580800A63349 /* StatsFetching.swift */; };
-		BF0A581024715AF600A63349 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A580F24715AF600A63349 /* API.swift */; };
-		BF0A581224715B1100A63349 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A581124715B1100A63349 /* APIError.swift */; };
 		BF0A581524715B4200A63349 /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A581424715B4200A63349 /* Stats.swift */; };
+		BF0A581D24715FD700A63349 /* covid_macTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A581C24715FD700A63349 /* covid_macTests.swift */; };
+		BF0A58252471686800A63349 /* StatsFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A58242471686700A63349 /* StatsFetcher.swift */; };
+		BF0A58272471688C00A63349 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A58262471688C00A63349 /* Session.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BF0A581F24715FD700A63349 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF0A57EF2470494100A63349 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BF0A57F62470494100A63349;
+			remoteInfo = "covid-mac";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		BF0A57F72470494100A63349 /* covid-mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "covid-mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -28,13 +39,23 @@
 		BF0A58042470494400A63349 /* covid_mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = covid_mac.entitlements; sourceTree = "<group>"; };
 		BF0A580A247049BF00A63349 /* HYFTWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HYFTWindowController.swift; sourceTree = "<group>"; };
 		BF0A580C2471580800A63349 /* StatsFetching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsFetching.swift; sourceTree = "<group>"; };
-		BF0A580F24715AF600A63349 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
-		BF0A581124715B1100A63349 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		BF0A581424715B4200A63349 /* Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.swift; sourceTree = "<group>"; };
+		BF0A581A24715FD700A63349 /* covid-macTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "covid-macTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF0A581C24715FD700A63349 /* covid_macTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = covid_macTests.swift; sourceTree = "<group>"; };
+		BF0A581E24715FD700A63349 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF0A58242471686700A63349 /* StatsFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsFetcher.swift; sourceTree = "<group>"; };
+		BF0A58262471688C00A63349 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		BF0A57F42470494100A63349 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF0A581724715FD700A63349 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -48,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				BF0A57F92470494100A63349 /* covid-mac */,
+				BF0A581B24715FD700A63349 /* covid-macTests */,
 				BF0A57F82470494100A63349 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				BF0A57F72470494100A63349 /* covid-mac.app */,
+				BF0A581A24715FD700A63349 /* covid-macTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -80,8 +103,8 @@
 			isa = PBXGroup;
 			children = (
 				BF0A580C2471580800A63349 /* StatsFetching.swift */,
-				BF0A581124715B1100A63349 /* APIError.swift */,
-				BF0A580F24715AF600A63349 /* API.swift */,
+				BF0A58242471686700A63349 /* StatsFetcher.swift */,
+				BF0A58262471688C00A63349 /* Session.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -92,6 +115,15 @@
 				BF0A581424715B4200A63349 /* Stats.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		BF0A581B24715FD700A63349 /* covid-macTests */ = {
+			isa = PBXGroup;
+			children = (
+				BF0A581C24715FD700A63349 /* covid_macTests.swift */,
+				BF0A581E24715FD700A63349 /* Info.plist */,
+			);
+			path = "covid-macTests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -114,6 +146,24 @@
 			productReference = BF0A57F72470494100A63349 /* covid-mac.app */;
 			productType = "com.apple.product-type.application";
 		};
+		BF0A581924715FD700A63349 /* covid-macTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF0A582324715FD700A63349 /* Build configuration list for PBXNativeTarget "covid-macTests" */;
+			buildPhases = (
+				BF0A581624715FD700A63349 /* Sources */,
+				BF0A581724715FD700A63349 /* Frameworks */,
+				BF0A581824715FD700A63349 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BF0A582024715FD700A63349 /* PBXTargetDependency */,
+			);
+			name = "covid-macTests";
+			productName = "covid-macTests";
+			productReference = BF0A581A24715FD700A63349 /* covid-macTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -126,6 +176,10 @@
 				TargetAttributes = {
 					BF0A57F62470494100A63349 = {
 						CreatedOnToolsVersion = 11.4.1;
+					};
+					BF0A581924715FD700A63349 = {
+						CreatedOnToolsVersion = 11.4.1;
+						TestTargetID = BF0A57F62470494100A63349;
 					};
 				};
 			};
@@ -143,6 +197,7 @@
 			projectRoot = "";
 			targets = (
 				BF0A57F62470494100A63349 /* covid-mac */,
+				BF0A581924715FD700A63349 /* covid-macTests */,
 			);
 		};
 /* End PBXProject section */
@@ -157,6 +212,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BF0A581824715FD700A63349 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -168,13 +230,29 @@
 				BF0A580B247049BF00A63349 /* HYFTWindowController.swift in Sources */,
 				BF0A580D2471580800A63349 /* StatsFetching.swift in Sources */,
 				BF0A581524715B4200A63349 /* Stats.swift in Sources */,
+				BF0A58272471688C00A63349 /* Session.swift in Sources */,
 				BF0A57FB2470494100A63349 /* AppDelegate.swift in Sources */,
-				BF0A581024715AF600A63349 /* API.swift in Sources */,
-				BF0A581224715B1100A63349 /* APIError.swift in Sources */,
+				BF0A58252471686800A63349 /* StatsFetcher.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF0A581624715FD700A63349 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF0A581D24715FD700A63349 /* covid_macTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BF0A582024715FD700A63349 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BF0A57F62470494100A63349 /* covid-mac */;
+			targetProxy = BF0A581F24715FD700A63349 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		BF0A58002470494400A63349 /* Main.storyboard */ = {
@@ -339,6 +417,44 @@
 			};
 			name = Release;
 		};
+		BF0A582124715FD700A63349 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "covid-macTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "gorecki.covid-macTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/covid-mac.app/Contents/MacOS/covid-mac";
+			};
+			name = Debug;
+		};
+		BF0A582224715FD700A63349 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "covid-macTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "gorecki.covid-macTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/covid-mac.app/Contents/MacOS/covid-mac";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -356,6 +472,15 @@
 			buildConfigurations = (
 				BF0A58082470494400A63349 /* Debug */,
 				BF0A58092470494400A63349 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF0A582324715FD700A63349 /* Build configuration list for PBXNativeTarget "covid-macTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF0A582124715FD700A63349 /* Debug */,
+				BF0A582224715FD700A63349 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -1,11 +1,3 @@
-//
-//  ViewController.swift
-//  covid-mac
-//
-//  Created by Maciej Gorecki on 16/05/2020.
-//  Copyright © 2020 Maciej Gorecki. All rights reserved.
-//
-
 import Cocoa
 
 class ViewController: NSViewController {
