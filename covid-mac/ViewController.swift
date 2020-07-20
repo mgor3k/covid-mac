@@ -3,16 +3,11 @@ import Cocoa
 class ViewController: NSViewController {
     @IBOutlet weak var messegeTextField: NSTextField!
     
+    private let api: StatsFetching = StatsFetcher(session: URLSession.shared)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override var representedObject: Any? {
-        didSet {
-        // Update the view, if already loaded.
-        }
+        fetchStats()
     }
     
     @available(OSX 10.12.2, *)
@@ -20,24 +15,32 @@ class ViewController: NSViewController {
         let touchBar = NSTouchBar()
         touchBar.delegate = self
         touchBar.customizationIdentifier = .hyftBar
-        touchBar.defaultItemIdentifiers = [.infoLabelItem, .joyEmojiItem, .sadEmojiItem,
+        touchBar.defaultItemIdentifiers = [.titleLabel, .joyEmojiItem, .sadEmojiItem,
           .angryEmojiItem, .flexibleSpace, .otherItemsProxy]
         return touchBar
     }
-    
-    
+}
 
-
+private extension ViewController {
+    func fetchStats() {
+        api.fetchData(for: "Poland") { result in
+            switch result {
+            case .success(let stats):
+                print(stats)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
 }
 
 extension ViewController: NSTouchBarDelegate {
-    
     func touchBar(_ touchBar: NSTouchBar, makeItemForIdentifier identifier: NSTouchBarItem.Identifier) -> NSTouchBarItem? {
         let custom = NSCustomTouchBarItem(identifier: identifier)
         
         switch identifier {
-        case .infoLabelItem:
-            let label = NSTextField.init(labelWithString: NSLocalizedString("How do you feel today?", comment:""))
+        case .titleLabel:
+            let label = NSTextField.init(labelWithString: "Covid stats in Poland")
             custom.view = label
             
         case .joyEmojiItem:
@@ -84,11 +87,9 @@ extension ViewController: NSTouchBarDelegate {
     
 }
 
-
-import AppKit
-
 extension NSTouchBarItem.Identifier {
-    static let infoLabelItem = NSTouchBarItem.Identifier("com.zeta.InfoLabel")
+    static let titleLabel = NSTouchBarItem.Identifier("covid.titleLabel")
+    
     static let joyEmojiItem = NSTouchBarItem.Identifier("com.zeta.JoyEmoji")
     static let sadEmojiItem = NSTouchBarItem.Identifier("com.zeta.SadEmoji")
     static let angryEmojiItem = NSTouchBarItem.Identifier("com.zeta.AngryEmoji")
