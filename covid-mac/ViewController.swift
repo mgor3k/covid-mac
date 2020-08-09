@@ -4,6 +4,7 @@ class ViewController: NSViewController {
     @IBOutlet weak var messegeTextField: NSTextField!
     
     private let api: StatsFetching = StatsFetcher(session: URLSession.shared)
+    private var stats: Stats?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,27 +16,42 @@ class ViewController: NSViewController {
         let touchBar = NSTouchBar()
         touchBar.delegate = self
         touchBar.customizationIdentifier = .hyftBar
-        touchBar.defaultItemIdentifiers = [.titleLabel, .joyEmojiItem, .sadEmojiItem,
-          .angryEmojiItem, .flexibleSpace, .otherItemsProxy]
+        touchBar.defaultItemIdentifiers = [
+            .titleLabel,
+            .allCasesItem,
+            .sadEmojiItem,
+            .angryEmojiItem,
+            .flexibleSpace,
+            .otherItemsProxy
+        ]
         return touchBar
     }
 }
 
 private extension ViewController {
     func fetchStats() {
-        api.fetchData(for: "Poland") { result in
+        api.fetchData(for: "Poland") { [weak self] result in
             switch result {
             case .success(let stats):
+                self?.stats = stats
+                DispatchQueue.main.async {
+                    self?.invalidateTouchBar()
+                }
                 print(stats)
             case .failure(let error):
                 print(error.localizedDescription)
             }
         }
     }
+    
+    func invalidateTouchBar() {
+        self.view.window?.windowController?.touchBar = nil
+    }
 }
 
 extension ViewController: NSTouchBarDelegate {
     func touchBar(_ touchBar: NSTouchBar, makeItemForIdentifier identifier: NSTouchBarItem.Identifier) -> NSTouchBarItem? {
+        print("Making touchbar")
         let custom = NSCustomTouchBarItem(identifier: identifier)
         
         switch identifier {
@@ -43,9 +59,8 @@ extension ViewController: NSTouchBarDelegate {
             let label = NSTextField.init(labelWithString: "Covid stats in Poland")
             custom.view = label
             
-        case .joyEmojiItem:
-            custom.view = NSButton(title: NSLocalizedString("😂", comment:""), target: self,
-              action: #selector(buttonPressed))
+        case .allCasesItem:
+            custom.view = NSTextField.init(labelWithString: "All: \(stats?.cases ?? 0)")
 
         case .sadEmojiItem:
             custom.view = NSButton(title: NSLocalizedString("😟", comment:""), target: self,
@@ -90,7 +105,7 @@ extension ViewController: NSTouchBarDelegate {
 extension NSTouchBarItem.Identifier {
     static let titleLabel = NSTouchBarItem.Identifier("covid.titleLabel")
     
-    static let joyEmojiItem = NSTouchBarItem.Identifier("com.zeta.JoyEmoji")
+    static let allCasesItem = NSTouchBarItem.Identifier("covid.allCases")
     static let sadEmojiItem = NSTouchBarItem.Identifier("com.zeta.SadEmoji")
     static let angryEmojiItem = NSTouchBarItem.Identifier("com.zeta.AngryEmoji")
 
