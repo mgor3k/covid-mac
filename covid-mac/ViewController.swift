@@ -19,7 +19,7 @@ class ViewController: NSViewController {
         touchBar.defaultItemIdentifiers = [
             .titleLabel,
             .allCasesItem,
-            .sadEmojiItem,
+            .deathsItem,
             .angryEmojiItem,
             .flexibleSpace,
             .otherItemsProxy
@@ -62,9 +62,8 @@ extension ViewController: NSTouchBarDelegate {
         case .allCasesItem:
             custom.view = NSTextField.init(labelWithString: "All: \(stats?.cases ?? 0)")
 
-        case .sadEmojiItem:
-            custom.view = NSButton(title: NSLocalizedString("😟", comment:""), target: self,
-              action: #selector(buttonPressed))
+        case .deathsItem:
+            custom.view = NSTextField.init(labelWithString: "☠️: \(stats?.deaths ?? 0)")
 
         case .angryEmojiItem:
             custom.view = NSButton(title: NSLocalizedString("😡", comment:""), target: self,
@@ -106,7 +105,7 @@ extension NSTouchBarItem.Identifier {
     static let titleLabel = NSTouchBarItem.Identifier("covid.titleLabel")
     
     static let allCasesItem = NSTouchBarItem.Identifier("covid.allCases")
-    static let sadEmojiItem = NSTouchBarItem.Identifier("com.zeta.SadEmoji")
+    static let deathsItem = NSTouchBarItem.Identifier("covid.deaths")
     static let angryEmojiItem = NSTouchBarItem.Identifier("com.zeta.AngryEmoji")
 
 }
