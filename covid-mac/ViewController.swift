@@ -20,7 +20,7 @@ class ViewController: NSViewController {
             .titleLabel,
             .allCasesItem,
             .deathsItem,
-            .angryEmojiItem,
+            .recoveredItem,
             .flexibleSpace,
             .otherItemsProxy
         ]
@@ -65,9 +65,8 @@ extension ViewController: NSTouchBarDelegate {
         case .deathsItem:
             custom.view = NSTextField.init(labelWithString: "☠️: \(stats?.deaths ?? 0)")
 
-        case .angryEmojiItem:
-            custom.view = NSButton(title: NSLocalizedString("😡", comment:""), target: self,
-              action: #selector(buttonPressed))
+        case .recoveredItem:
+            custom.view = NSTextField.init(labelWithString: "👍: \(stats?.recovered ?? 0)")
             
         default:
             return nil
@@ -106,7 +105,7 @@ extension NSTouchBarItem.Identifier {
     
     static let allCasesItem = NSTouchBarItem.Identifier("covid.allCases")
     static let deathsItem = NSTouchBarItem.Identifier("covid.deaths")
-    static let angryEmojiItem = NSTouchBarItem.Identifier("com.zeta.AngryEmoji")
+    static let recoveredItem = NSTouchBarItem.Identifier("covid.recovered")
 
 }
 
