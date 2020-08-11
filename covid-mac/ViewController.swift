@@ -1,7 +1,7 @@
 import Cocoa
 
 class ViewController: NSViewController {
-    @IBOutlet weak var messegeTextField: NSTextField!
+    @IBOutlet weak var countryTextField: NSTextField!
     
     private let api: StatsFetching = StatsFetcher(session: URLSession.shared)
     private var stats: Stats?
@@ -15,7 +15,7 @@ class ViewController: NSViewController {
     override func makeTouchBar() -> NSTouchBar? {
         let touchBar = NSTouchBar()
         touchBar.delegate = self
-        touchBar.customizationIdentifier = .hyftBar
+        touchBar.customizationIdentifier = .stats
         touchBar.defaultItemIdentifiers = [
             .titleLabel,
             .allCasesItem,
@@ -75,29 +75,6 @@ extension ViewController: NSTouchBarDelegate {
         return custom
     }
     
-    @objc func buttonPressed() {
-        
-    }
-    
-    func getMessageBaseOnReaction(_ reaction: String) -> String {
-            switch reaction {
-            case "😂":
-                return "Being happy never goes out of style. - Lilly Pulitzer"
-            case "😟":
-                return "Sadness flies away on the wings of time. - Jean de La Fontaine"
-            case "😡":
-                return "To be angry is to revenge the faults of others on ourselves. - Alexander Pope"
-            default:
-                return "Look like our quote does not cater to this reaction"
-            }
-        }
-
-    //Quotes are extracted from https://www.brainyquote.com
-    func showMessageBaseOnReaction(_ reaction: String) {
-        messegeTextField.isHidden = false
-        messegeTextField.stringValue = getMessageBaseOnReaction(reaction)
-    }
-    
 }
 
 extension NSTouchBarItem.Identifier {
@@ -106,9 +83,8 @@ extension NSTouchBarItem.Identifier {
     static let allCasesItem = NSTouchBarItem.Identifier("covid.allCases")
     static let deathsItem = NSTouchBarItem.Identifier("covid.deaths")
     static let recoveredItem = NSTouchBarItem.Identifier("covid.recovered")
-
 }
 
 extension NSTouchBar.CustomizationIdentifier {
-    static let hyftBar = NSTouchBar.CustomizationIdentifier("com.zeta.ViewController.HYFTTouchBar")
+    static let stats = NSTouchBar.CustomizationIdentifier("covid.stats")
 }
