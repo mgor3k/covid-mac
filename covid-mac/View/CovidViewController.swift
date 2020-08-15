@@ -5,15 +5,12 @@
 import Cocoa
 
 class CovidViewController: NSViewController {
-    private let api: StatsFetching = StatsFetcher(session: URLSession.shared)
-    private var stats: Stats?
+    private let viewModel = CovidViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchStats()
     }
-    
-    override func loadView() {}
     
     @available(OSX 10.12.2, *)
     override func makeTouchBar() -> NSTouchBar? {
@@ -34,28 +31,27 @@ class CovidViewController: NSViewController {
 
 private extension CovidViewController {
     func fetchStats() {
-        api.fetchData(for: "Poland") { [weak self] result in
+        viewModel.fetchStats { [weak self] result in
             switch result {
-            case .success(let stats):
-                self?.stats = stats
-                DispatchQueue.main.async {
-                    self?.invalidateTouchBar()
-                }
-                print(stats)
-            case .failure(let error):
-                print(error.localizedDescription)
+            case .success:
+                self?.invalidateTouchBar()
+            case .failure:
+                break
             }
         }
     }
     
     func invalidateTouchBar() {
-        self.view.window?.windowController?.touchBar = nil
+        view.window?.windowController?.touchBar = nil
     }
 }
 
 extension CovidViewController: NSTouchBarDelegate {
-    func touchBar(_ touchBar: NSTouchBar, makeItemForIdentifier identifier: NSTouchBarItem.Identifier) -> NSTouchBarItem? {
-        print("Making touchbar")
+    func touchBar(
+        _ touchBar: NSTouchBar,
+        makeItemForIdentifier identifier: NSTouchBarItem.Identifier
+    ) -> NSTouchBarItem? {
+        guard let stats = viewModel.stats else { return nil }
         let custom = NSCustomTouchBarItem(identifier: identifier)
         
         switch identifier {
@@ -64,13 +60,13 @@ extension CovidViewController: NSTouchBarDelegate {
             custom.view = label
             
         case .allCasesItem:
-            custom.view = NSTextField.init(labelWithString: "All: \(stats?.cases ?? 0)")
+            custom.view = NSTextField.init(labelWithString: "All: \(stats.cases)")
 
         case .deathsItem:
-            custom.view = NSTextField.init(labelWithString: "☠️: \(stats?.deaths ?? 0)")
+            custom.view = NSTextField.init(labelWithString: "☠️: \(stats.deaths)")
 
         case .recoveredItem:
-            custom.view = NSTextField.init(labelWithString: "👍: \(stats?.recovered ?? 0)")
+            custom.view = NSTextField.init(labelWithString: "👍: \(stats.recovered)")
             
         default:
             return nil

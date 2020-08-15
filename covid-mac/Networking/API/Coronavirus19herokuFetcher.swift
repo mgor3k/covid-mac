@@ -4,7 +4,7 @@
 
 import Foundation
 
-class StatsFetcher: StatsFetching {
+class Coronavirus19herokuFetcher: StatsFetching {
     private let baseURL: String = "https://coronavirus-19-api.herokuapp.com/"
     private let session: Session
     
