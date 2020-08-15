@@ -65,13 +65,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		BF011B2824E824E300082C2B /* ViewController */ = {
+		BF011B2824E824E300082C2B /* View */ = {
 			isa = PBXGroup;
 			children = (
 				BF0A580A247049BF00A63349 /* WindowController.swift */,
 				BF0A57FC2470494100A63349 /* CovidViewController.swift */,
 			);
-			path = ViewController;
+			path = View;
+			sourceTree = "<group>";
+		};
+		BF011B2924E8253C00082C2B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		BF0A57EE2470494100A63349 = {
@@ -98,7 +105,8 @@
 				BF0A57FA2470494100A63349 /* AppDelegate.swift */,
 				BF0A580E24715AE400A63349 /* API */,
 				BF0A581324715B3800A63349 /* Model */,
-				BF011B2824E824E300082C2B /* ViewController */,
+				BF011B2824E824E300082C2B /* View */,
+				BF011B2924E8253C00082C2B /* ViewModel */,
 				BF0A57FE2470494400A63349 /* Assets.xcassets */,
 				BF0A58002470494400A63349 /* Main.storyboard */,
 				BF0A58032470494400A63349 /* Info.plist */,

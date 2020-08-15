@@ -1,3 +1,7 @@
+//
+//  Copyright © 2020 Maciej Gorecki. All rights reserved.
+//
+
 import Cocoa
 
 class CovidViewController: NSViewController {
