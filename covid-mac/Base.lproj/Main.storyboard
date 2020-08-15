@@ -728,12 +728,27 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xT8-v6-cEE">
+                                <rect key="frame" x="184" y="125" width="112" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="jCt-Mq-Nec"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="Set" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="vEh-3i-b5t">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="setButtonTapped:" target="XfG-lQ-9wD" id="dX5-bm-iPK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="xT8-v6-cEE" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="2Iq-wk-D1q"/>
                             <constraint firstItem="RZ3-Du-6nl" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="32" id="GNb-xU-CRC"/>
                             <constraint firstItem="vrY-tU-UxU" firstAttribute="top" secondItem="RZ3-Du-6nl" secondAttribute="bottom" constant="32" id="MaD-Xd-Qvs"/>
                             <constraint firstItem="vrY-tU-UxU" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="Qh6-XO-iWy"/>
                             <constraint firstItem="RZ3-Du-6nl" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="VER-fo-58i"/>
+                            <constraint firstItem="xT8-v6-cEE" firstAttribute="top" secondItem="vrY-tU-UxU" secondAttribute="bottom" constant="16" id="kL0-Nf-4xW"/>
                         </constraints>
                     </view>
                     <connections>

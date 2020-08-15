@@ -19,6 +19,7 @@
 		BF0A58272471688C00A63349 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A58262471688C00A63349 /* Session.swift */; };
 		BFA2751B24E8287200D8A453 /* CovidViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA2751A24E8287200D8A453 /* CovidViewModel.swift */; };
 		BFA2751E24E82AD100D8A453 /* TouchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA2751D24E82AD100D8A453 /* TouchBar.swift */; };
+		BFA2752124E835BA00D8A453 /* String+Capitalize.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA2752024E835BA00D8A453 /* String+Capitalize.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		BF0A58262471688C00A63349 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		BFA2751A24E8287200D8A453 /* CovidViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidViewModel.swift; sourceTree = "<group>"; };
 		BFA2751D24E82AD100D8A453 /* TouchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchBar.swift; sourceTree = "<group>"; };
+		BFA2752024E835BA00D8A453 /* String+Capitalize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Capitalize.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 				BF011B2824E824E300082C2B /* View */,
 				BF011B2924E8253C00082C2B /* ViewModel */,
 				BF0A57FE2470494400A63349 /* Assets.xcassets */,
+				BFA2751F24E835A900D8A453 /* Extensions */,
 				BF0A58002470494400A63349 /* Main.storyboard */,
 				BF0A58032470494400A63349 /* Info.plist */,
 				BF0A58042470494400A63349 /* covid_mac.entitlements */,
@@ -154,6 +157,14 @@
 				BF0A581E24715FD700A63349 /* Info.plist */,
 			);
 			path = "covid-macTests";
+			sourceTree = "<group>";
+		};
+		BFA2751F24E835A900D8A453 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BFA2752024E835BA00D8A453 /* String+Capitalize.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,6 +273,7 @@
 				BF0A580B247049BF00A63349 /* WindowController.swift in Sources */,
 				BF0A580D2471580800A63349 /* StatsFetching.swift in Sources */,
 				BF0A581524715B4200A63349 /* Stats.swift in Sources */,
+				BFA2752124E835BA00D8A453 /* String+Capitalize.swift in Sources */,
 				BF0A58272471688C00A63349 /* Session.swift in Sources */,
 				BF0A57FB2470494100A63349 /* AppDelegate.swift in Sources */,
 				BF0A58252471686800A63349 /* Coronavirus19herokuFetcher.swift in Sources */,

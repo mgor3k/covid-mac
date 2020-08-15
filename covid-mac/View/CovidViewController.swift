@@ -7,10 +7,11 @@ import Cocoa
 class CovidViewController: NSViewController {
     @IBOutlet private weak var countryTextField: NSTextField!
     
-    private let viewModel = CovidViewModel()
+    private lazy var viewModel = CovidViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        countryTextField.stringValue = "Poland"
         fetchStats()
     }
     
@@ -28,11 +29,15 @@ class CovidViewController: NSViewController {
         ]
         return touchBar
     }
+    
+    @IBAction func setButtonTapped(_ sender: Any) {
+        fetchStats()
+    }
 }
 
 private extension CovidViewController {
     func fetchStats() {
-        viewModel.fetchStats { [weak self] result in
+        viewModel.fetchStats(country: countryTextField.stringValue) { [weak self] result in
             switch result {
             case .success:
                 self?.invalidateTouchBar()
@@ -43,6 +48,7 @@ private extension CovidViewController {
     }
     
     func invalidateTouchBar() {
+        touchBar = nil
         view.window?.windowController?.touchBar = nil
     }
 }
@@ -57,13 +63,14 @@ extension CovidViewController: NSTouchBarDelegate {
         
         switch identifier {
         case .allCasesItem:
-            custom.view = NSTextField.init(labelWithString: "Total cases in Poland: \(stats.cases)")
+            let country = viewModel.country.capitalizingFirstLetter()
+            custom.view = NSTextField(labelWithString: "Total cases in \(country): \(stats.cases)")
 
         case .deathsItem:
-            custom.view = NSTextField.init(labelWithString: "☠️: \(stats.deaths)")
+            custom.view = NSTextField(labelWithString: "☠️: \(stats.deaths)")
 
         case .recoveredItem:
-            custom.view = NSTextField.init(labelWithString: "👍: \(stats.recovered)")
+            custom.view = NSTextField(labelWithString: "👍: \(stats.recovered ?? 0)")
             
         default:
             return nil
