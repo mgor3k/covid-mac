@@ -708,7 +708,37 @@
                     <view key="view" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RZ3-Du-6nl">
+                                <rect key="frame" x="198" y="222" width="84" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Type country" id="Pmd-SF-Be7">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vrY-tU-UxU">
+                                <rect key="frame" x="140" y="169" width="200" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="sUJ-Ov-ALL"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="WFz-J3-7Jx">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="RZ3-Du-6nl" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="32" id="GNb-xU-CRC"/>
+                            <constraint firstItem="vrY-tU-UxU" firstAttribute="top" secondItem="RZ3-Du-6nl" secondAttribute="bottom" constant="32" id="MaD-Xd-Qvs"/>
+                            <constraint firstItem="vrY-tU-UxU" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="Qh6-XO-iWy"/>
+                            <constraint firstItem="RZ3-Du-6nl" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="VER-fo-58i"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="countryTextField" destination="vrY-tU-UxU" id="7TW-te-nM2"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -5,6 +5,8 @@
 import Cocoa
 
 class CovidViewController: NSViewController {
+    @IBOutlet private weak var countryTextField: NSTextField!
+    
     private let viewModel = CovidViewModel()
     
     override func viewDidLoad() {
