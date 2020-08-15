@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BF0A57FB2470494100A63349 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A57FA2470494100A63349 /* AppDelegate.swift */; };
-		BF0A57FD2470494100A63349 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A57FC2470494100A63349 /* ViewController.swift */; };
+		BF0A57FD2470494100A63349 /* CovidViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A57FC2470494100A63349 /* CovidViewController.swift */; };
 		BF0A57FF2470494400A63349 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF0A57FE2470494400A63349 /* Assets.xcassets */; };
 		BF0A58022470494400A63349 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF0A58002470494400A63349 /* Main.storyboard */; };
 		BF0A580B247049BF00A63349 /* HYFTWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A580A247049BF00A63349 /* HYFTWindowController.swift */; };
@@ -32,7 +32,7 @@
 /* Begin PBXFileReference section */
 		BF0A57F72470494100A63349 /* covid-mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "covid-mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF0A57FA2470494100A63349 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BF0A57FC2470494100A63349 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BF0A57FC2470494100A63349 /* CovidViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidViewController.swift; sourceTree = "<group>"; };
 		BF0A57FE2470494400A63349 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF0A58012470494400A63349 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BF0A58032470494400A63349 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -65,6 +65,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BF011B2824E824E300082C2B /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BF0A57FC2470494100A63349 /* CovidViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		BF0A57EE2470494100A63349 = {
 			isa = PBXGroup;
 			children = (
@@ -89,7 +97,7 @@
 				BF0A57FA2470494100A63349 /* AppDelegate.swift */,
 				BF0A580E24715AE400A63349 /* API */,
 				BF0A581324715B3800A63349 /* Model */,
-				BF0A57FC2470494100A63349 /* ViewController.swift */,
+				BF011B2824E824E300082C2B /* ViewController */,
 				BF0A580A247049BF00A63349 /* HYFTWindowController.swift */,
 				BF0A57FE2470494400A63349 /* Assets.xcassets */,
 				BF0A58002470494400A63349 /* Main.storyboard */,
@@ -226,7 +234,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF0A57FD2470494100A63349 /* ViewController.swift in Sources */,
+				BF0A57FD2470494100A63349 /* CovidViewController.swift in Sources */,
 				BF0A580B247049BF00A63349 /* HYFTWindowController.swift in Sources */,
 				BF0A580D2471580800A63349 /* StatsFetching.swift in Sources */,
 				BF0A581524715B4200A63349 /* Stats.swift in Sources */,

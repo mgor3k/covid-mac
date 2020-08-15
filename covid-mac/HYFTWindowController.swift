@@ -17,7 +17,7 @@ class HYFTWindowController: NSWindowController {
     }
     
     override func makeTouchBar() -> NSTouchBar? {
-        guard let vc = contentViewController as? ViewController else {
+        guard let vc = contentViewController as? CovidViewController else {
             return nil
         }
         return vc.makeTouchBar()

@@ -1,6 +1,6 @@
 import Cocoa
 
-class ViewController: NSViewController {
+class CovidViewController: NSViewController {
     private let api: StatsFetching = StatsFetcher(session: URLSession.shared)
     private var stats: Stats?
     
@@ -28,7 +28,7 @@ class ViewController: NSViewController {
     }
 }
 
-private extension ViewController {
+private extension CovidViewController {
     func fetchStats() {
         api.fetchData(for: "Poland") { [weak self] result in
             switch result {
@@ -49,7 +49,7 @@ private extension ViewController {
     }
 }
 
-extension ViewController: NSTouchBarDelegate {
+extension CovidViewController: NSTouchBarDelegate {
     func touchBar(_ touchBar: NSTouchBar, makeItemForIdentifier identifier: NSTouchBarItem.Identifier) -> NSTouchBarItem? {
         print("Making touchbar")
         let custom = NSCustomTouchBarItem(identifier: identifier)
