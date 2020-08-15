@@ -6,10 +6,11 @@ import Foundation
 
 class CovidViewModel {
     private let api: StatsFetching = Coronavirus19herokuFetcher(session: URLSession.shared)
-    
     private var country = "Poland"
-    var stats: Stats?
-    
+    private(set) var stats: Stats?
+}
+
+extension CovidViewModel {
     var countryName: String {
         country.capitalizingFirstLetter()
     }
