@@ -11,7 +11,7 @@
 		BF0A57FD2470494100A63349 /* CovidViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A57FC2470494100A63349 /* CovidViewController.swift */; };
 		BF0A57FF2470494400A63349 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF0A57FE2470494400A63349 /* Assets.xcassets */; };
 		BF0A58022470494400A63349 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF0A58002470494400A63349 /* Main.storyboard */; };
-		BF0A580B247049BF00A63349 /* HYFTWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A580A247049BF00A63349 /* HYFTWindowController.swift */; };
+		BF0A580B247049BF00A63349 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A580A247049BF00A63349 /* WindowController.swift */; };
 		BF0A580D2471580800A63349 /* StatsFetching.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A580C2471580800A63349 /* StatsFetching.swift */; };
 		BF0A581524715B4200A63349 /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A581424715B4200A63349 /* Stats.swift */; };
 		BF0A581D24715FD700A63349 /* covid_macTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A581C24715FD700A63349 /* covid_macTests.swift */; };
@@ -37,7 +37,7 @@
 		BF0A58012470494400A63349 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BF0A58032470494400A63349 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF0A58042470494400A63349 /* covid_mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = covid_mac.entitlements; sourceTree = "<group>"; };
-		BF0A580A247049BF00A63349 /* HYFTWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HYFTWindowController.swift; sourceTree = "<group>"; };
+		BF0A580A247049BF00A63349 /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
 		BF0A580C2471580800A63349 /* StatsFetching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsFetching.swift; sourceTree = "<group>"; };
 		BF0A581424715B4200A63349 /* Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.swift; sourceTree = "<group>"; };
 		BF0A581A24715FD700A63349 /* covid-macTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "covid-macTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,6 +68,7 @@
 		BF011B2824E824E300082C2B /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				BF0A580A247049BF00A63349 /* WindowController.swift */,
 				BF0A57FC2470494100A63349 /* CovidViewController.swift */,
 			);
 			path = ViewController;
@@ -98,7 +99,6 @@
 				BF0A580E24715AE400A63349 /* API */,
 				BF0A581324715B3800A63349 /* Model */,
 				BF011B2824E824E300082C2B /* ViewController */,
-				BF0A580A247049BF00A63349 /* HYFTWindowController.swift */,
 				BF0A57FE2470494400A63349 /* Assets.xcassets */,
 				BF0A58002470494400A63349 /* Main.storyboard */,
 				BF0A58032470494400A63349 /* Info.plist */,
@@ -235,7 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF0A57FD2470494100A63349 /* CovidViewController.swift in Sources */,
-				BF0A580B247049BF00A63349 /* HYFTWindowController.swift in Sources */,
+				BF0A580B247049BF00A63349 /* WindowController.swift in Sources */,
 				BF0A580D2471580800A63349 /* StatsFetching.swift in Sources */,
 				BF0A581524715B4200A63349 /* Stats.swift in Sources */,
 				BF0A58272471688C00A63349 /* Session.swift in Sources */,
