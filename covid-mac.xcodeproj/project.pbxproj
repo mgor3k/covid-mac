@@ -18,6 +18,7 @@
 		BF0A58252471686800A63349 /* Coronavirus19herokuFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A58242471686700A63349 /* Coronavirus19herokuFetcher.swift */; };
 		BF0A58272471688C00A63349 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A58262471688C00A63349 /* Session.swift */; };
 		BFA2751B24E8287200D8A453 /* CovidViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA2751A24E8287200D8A453 /* CovidViewModel.swift */; };
+		BFA2751E24E82AD100D8A453 /* TouchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA2751D24E82AD100D8A453 /* TouchBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		BF0A58242471686700A63349 /* Coronavirus19herokuFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coronavirus19herokuFetcher.swift; sourceTree = "<group>"; };
 		BF0A58262471688C00A63349 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		BFA2751A24E8287200D8A453 /* CovidViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidViewModel.swift; sourceTree = "<group>"; };
+		BFA2751D24E82AD100D8A453 /* TouchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +91,6 @@
 			children = (
 				BF0A58262471688C00A63349 /* Session.swift */,
 				BF0A580C2471580800A63349 /* StatsFetching.swift */,
-				BF0A581324715B3800A63349 /* Model */,
 				BF0A580E24715AE400A63349 /* API */,
 			);
 			path = Networking;
@@ -118,6 +119,7 @@
 			children = (
 				BF0A57FA2470494100A63349 /* AppDelegate.swift */,
 				BF011B2A24E8268900082C2B /* Networking */,
+				BF0A581324715B3800A63349 /* Model */,
 				BF011B2824E824E300082C2B /* View */,
 				BF011B2924E8253C00082C2B /* ViewModel */,
 				BF0A57FE2470494400A63349 /* Assets.xcassets */,
@@ -140,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				BF0A581424715B4200A63349 /* Stats.swift */,
+				BFA2751D24E82AD100D8A453 /* TouchBar.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 			files = (
 				BFA2751B24E8287200D8A453 /* CovidViewModel.swift in Sources */,
 				BF0A57FD2470494100A63349 /* CovidViewController.swift in Sources */,
+				BFA2751E24E82AD100D8A453 /* TouchBar.swift in Sources */,
 				BF0A580B247049BF00A63349 /* WindowController.swift in Sources */,
 				BF0A580D2471580800A63349 /* StatsFetching.swift in Sources */,
 				BF0A581524715B4200A63349 /* Stats.swift in Sources */,
