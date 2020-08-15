@@ -1,8 +1,6 @@
 import Cocoa
 
 class ViewController: NSViewController {
-    @IBOutlet weak var countryTextField: NSTextField!
-    
     private let api: StatsFetching = StatsFetcher(session: URLSession.shared)
     private var stats: Stats?
     
@@ -10,6 +8,8 @@ class ViewController: NSViewController {
         super.viewDidLoad()
         fetchStats()
     }
+    
+    override func loadView() {}
     
     @available(OSX 10.12.2, *)
     override func makeTouchBar() -> NSTouchBar? {
