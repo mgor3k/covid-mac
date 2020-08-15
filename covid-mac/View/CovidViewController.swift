@@ -11,7 +11,7 @@ class CovidViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        countryTextField.stringValue = "Poland"
+        countryTextField.stringValue = viewModel.countryName
         fetchStats()
     }
     
@@ -31,13 +31,14 @@ class CovidViewController: NSViewController {
     }
     
     @IBAction func setButtonTapped(_ sender: Any) {
+        viewModel.setCountry(countryTextField.stringValue)
         fetchStats()
     }
 }
 
 private extension CovidViewController {
     func fetchStats() {
-        viewModel.fetchStats(country: countryTextField.stringValue) { [weak self] result in
+        viewModel.fetchStats() { [weak self] result in
             switch result {
             case .success:
                 self?.invalidateTouchBar()
@@ -63,7 +64,7 @@ extension CovidViewController: NSTouchBarDelegate {
         
         switch identifier {
         case .allCasesItem:
-            let country = viewModel.country.capitalizingFirstLetter()
+            let country = viewModel.countryName
             custom.view = NSTextField(labelWithString: "Total cases in \(country): \(stats.cases)")
 
         case .deathsItem:

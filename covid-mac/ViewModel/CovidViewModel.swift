@@ -7,12 +7,18 @@ import Foundation
 class CovidViewModel {
     private let api: StatsFetching = Coronavirus19herokuFetcher(session: URLSession.shared)
     
-    private(set) var country = ""
+    private var country = "Poland"
     var stats: Stats?
     
-    func fetchStats(country: String, completion: @escaping StatsCompletion) {
+    var countryName: String {
+        country.capitalizingFirstLetter()
+    }
+    
+    func setCountry(_ country: String) {
         self.country = country
-        
+    }
+    
+    func fetchStats(completion: @escaping StatsCompletion) {
         api.fetchData(for: country) { [weak self] result in
             switch result {
             case .success(let stats):
