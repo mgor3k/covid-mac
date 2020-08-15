@@ -18,7 +18,6 @@ class CovidViewController: NSViewController {
         touchBar.delegate = self
         touchBar.customizationIdentifier = .stats
         touchBar.defaultItemIdentifiers = [
-            .titleLabel,
             .allCasesItem,
             .deathsItem,
             .recoveredItem,
@@ -55,12 +54,8 @@ extension CovidViewController: NSTouchBarDelegate {
         let custom = NSCustomTouchBarItem(identifier: identifier)
         
         switch identifier {
-        case .titleLabel:
-            let label = NSTextField.init(labelWithString: "Covid stats in Poland")
-            custom.view = label
-            
         case .allCasesItem:
-            custom.view = NSTextField.init(labelWithString: "All: \(stats.cases)")
+            custom.view = NSTextField.init(labelWithString: "Total cases in Poland: \(stats.cases)")
 
         case .deathsItem:
             custom.view = NSTextField.init(labelWithString: "☠️: \(stats.deaths)")

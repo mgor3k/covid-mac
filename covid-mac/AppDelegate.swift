@@ -15,13 +15,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         let statusBar = NSStatusBar.system
         statusBarItem = statusBar.statusItem(withLength: NSStatusItem.squareLength)
-        statusBarItem.button?.title = "☝️"
+        statusBarItem.button?.title = "☠️"
         statusBarItem.button?.target = self
         statusBarItem.button?.action = #selector(statusBarTapped)
         statusBarItem.button?.sendAction(on: .leftMouseUp)
-        
-        let statusBarMenu = NSMenu(title: "lel menu")
-//        statusBarItem.menu = statusBarMenu
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
@@ -31,7 +28,4 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @objc func statusBarTapped() {
         NSApplication.shared.activate(ignoringOtherApps: true)
     }
-
-
 }
-
