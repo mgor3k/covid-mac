@@ -29,7 +29,7 @@ class Coronavirus19herokuFetcher: StatsFetching {
             
             let decoder = JSONDecoder()
             guard let data = data else {
-                let error = FetchError.noData
+                let error = FetchError.dataMissing
                 error.log()
                 completion(.failure(error))
                 return
@@ -39,8 +39,14 @@ class Coronavirus19herokuFetcher: StatsFetching {
                 let stats = try decoder.decode(Stats.self, from: data)
                 completion(.success(stats))
             } catch {
-                error.log()
-                completion(.failure(error))
+                if let stringError = String(data: data, encoding: .utf8) {
+                    let error = FetchError.custom(stringError)
+                    error.log()
+                    completion(.failure(error))
+                } else {
+                    error.log()
+                    completion(.failure(error))
+                }
             }
             
         }

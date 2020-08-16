@@ -6,6 +6,7 @@ import Cocoa
 
 class CovidViewController: NSViewController {
     @IBOutlet private weak var countryTextField: NSTextField!
+    @IBOutlet private weak var errorLabel: NSTextField!
     
     private lazy var viewModel = CovidViewModel()
     
@@ -41,10 +42,12 @@ private extension CovidViewController {
         viewModel.fetchStats() { [weak self] result in
             switch result {
             case .success:
-                self?.invalidateTouchBar()
-            case .failure:
-                break
+                self?.errorLabel.isHidden = true
+            case .failure(let error):
+                self?.errorLabel.isHidden = false
+                self?.errorLabel.stringValue = error.localizedDescription
             }
+            self?.invalidateTouchBar()
         }
     }
     

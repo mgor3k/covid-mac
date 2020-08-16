@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="17147" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16097.2"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17147"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -717,17 +718,38 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vrY-tU-UxU">
+                            <stackView distribution="fill" orientation="vertical" alignment="centerX" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ekh-br-axf">
                                 <rect key="frame" x="75" y="79" width="200" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="sUJ-Ov-ALL"/>
-                                </constraints>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="WFz-J3-7Jx">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
+                                <subviews>
+                                    <textField verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vrY-tU-UxU">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="sUJ-Ov-ALL"/>
+                                        </constraints>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="WFz-J3-7Jx">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jmH-NQ-PMK">
+                                        <rect key="frame" x="-2" y="5" width="41" height="16"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Label" id="vTa-Kc-5QU">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="systemRedColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                </subviews>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xT8-v6-cEE">
                                 <rect key="frame" x="119" y="35" width="112" height="32"/>
                                 <constraints>
@@ -745,14 +767,15 @@
                         <constraints>
                             <constraint firstItem="xT8-v6-cEE" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="2Iq-wk-D1q"/>
                             <constraint firstItem="RZ3-Du-6nl" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="32" id="GNb-xU-CRC"/>
-                            <constraint firstItem="vrY-tU-UxU" firstAttribute="top" secondItem="RZ3-Du-6nl" secondAttribute="bottom" constant="32" id="MaD-Xd-Qvs"/>
-                            <constraint firstItem="vrY-tU-UxU" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="Qh6-XO-iWy"/>
+                            <constraint firstItem="ekh-br-axf" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="RBw-VN-nsZ"/>
+                            <constraint firstItem="vrY-tU-UxU" firstAttribute="top" secondItem="RZ3-Du-6nl" secondAttribute="bottom" constant="32" id="RUT-NP-mga"/>
                             <constraint firstItem="RZ3-Du-6nl" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="VER-fo-58i"/>
-                            <constraint firstItem="xT8-v6-cEE" firstAttribute="top" secondItem="vrY-tU-UxU" secondAttribute="bottom" constant="16" id="kL0-Nf-4xW"/>
+                            <constraint firstItem="xT8-v6-cEE" firstAttribute="top" secondItem="ekh-br-axf" secondAttribute="bottom" constant="16" id="hYw-rG-BCN"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="countryTextField" destination="vrY-tU-UxU" id="7TW-te-nM2"/>
+                        <outlet property="errorLabel" destination="jmH-NQ-PMK" id="rT6-rf-kq4"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
