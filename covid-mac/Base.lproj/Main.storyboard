@@ -706,11 +706,11 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="CovidViewController" customModule="covid_mac" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="350" height="180"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RZ3-Du-6nl">
-                                <rect key="frame" x="198" y="222" width="84" height="16"/>
+                                <rect key="frame" x="133" y="132" width="84" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Type country" id="Pmd-SF-Be7">
                                     <font key="font" usesAppearanceFont="YES"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -718,7 +718,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vrY-tU-UxU">
-                                <rect key="frame" x="140" y="169" width="200" height="21"/>
+                                <rect key="frame" x="75" y="79" width="200" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="sUJ-Ov-ALL"/>
                                 </constraints>
@@ -729,7 +729,7 @@
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xT8-v6-cEE">
-                                <rect key="frame" x="184" y="125" width="112" height="32"/>
+                                <rect key="frame" x="119" y="35" width="112" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="jCt-Mq-Nec"/>
                                 </constraints>
@@ -757,7 +757,7 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="30" y="608.5"/>
         </scene>
     </scenes>
 </document>
