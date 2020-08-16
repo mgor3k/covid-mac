@@ -24,9 +24,8 @@ extension CovidViewModel {
             switch result {
             case .success(let stats):
                 self?.stats = stats
-            case .failure(let error):
+            case .failure:
                 self?.stats = nil
-                print(error.localizedDescription)
             }
             DispatchQueue.main.async {
                 completion(result)

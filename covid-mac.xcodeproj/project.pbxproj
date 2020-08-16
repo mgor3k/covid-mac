@@ -17,6 +17,7 @@
 		BF0A581D24715FD700A63349 /* covid_macTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A581C24715FD700A63349 /* covid_macTests.swift */; };
 		BF0A58252471686800A63349 /* Coronavirus19herokuFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A58242471686700A63349 /* Coronavirus19herokuFetcher.swift */; };
 		BF0A58272471688C00A63349 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A58262471688C00A63349 /* Session.swift */; };
+		BF649DB824E97BE9005E3F6D /* OSLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF649DB724E97BE9005E3F6D /* OSLog.swift */; };
 		BFA2751B24E8287200D8A453 /* CovidViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA2751A24E8287200D8A453 /* CovidViewModel.swift */; };
 		BFA2751E24E82AD100D8A453 /* TouchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA2751D24E82AD100D8A453 /* TouchBar.swift */; };
 		BFA2752124E835BA00D8A453 /* String+Capitalize.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA2752024E835BA00D8A453 /* String+Capitalize.swift */; };
@@ -48,6 +49,7 @@
 		BF0A581E24715FD700A63349 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF0A58242471686700A63349 /* Coronavirus19herokuFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coronavirus19herokuFetcher.swift; sourceTree = "<group>"; };
 		BF0A58262471688C00A63349 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		BF649DB724E97BE9005E3F6D /* OSLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSLog.swift; sourceTree = "<group>"; };
 		BFA2751A24E8287200D8A453 /* CovidViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidViewModel.swift; sourceTree = "<group>"; };
 		BFA2751D24E82AD100D8A453 /* TouchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchBar.swift; sourceTree = "<group>"; };
 		BFA2752024E835BA00D8A453 /* String+Capitalize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Capitalize.swift"; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				BFA2752024E835BA00D8A453 /* String+Capitalize.swift */,
+				BF649DB724E97BE9005E3F6D /* OSLog.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 				BF0A57FD2470494100A63349 /* CovidViewController.swift in Sources */,
 				BFA2751E24E82AD100D8A453 /* TouchBar.swift in Sources */,
 				BF0A580B247049BF00A63349 /* WindowController.swift in Sources */,
+				BF649DB824E97BE9005E3F6D /* OSLog.swift in Sources */,
 				BF0A580D2471580800A63349 /* StatsFetching.swift in Sources */,
 				BF0A581524715B4200A63349 /* Stats.swift in Sources */,
 				BFA2752124E835BA00D8A453 /* String+Capitalize.swift in Sources */,

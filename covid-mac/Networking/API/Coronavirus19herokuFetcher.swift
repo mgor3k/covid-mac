@@ -3,6 +3,7 @@
 //
 
 import Foundation
+import os.log
 
 class Coronavirus19herokuFetcher: StatsFetching {
     private let baseURL: String = "https://coronavirus-19-api.herokuapp.com/"
@@ -21,13 +22,16 @@ class Coronavirus19herokuFetcher: StatsFetching {
         
         let dataTask = session.dataTask(with: url) { data, response, error in
             if let error = error {
+                error.log()
                 completion(.failure(error))
                 return
             }
             
             let decoder = JSONDecoder()
             guard let data = data else {
-                completion(.failure(FetchError.noData))
+                let error = FetchError.noData
+                error.log()
+                completion(.failure(error))
                 return
             }
             
@@ -35,11 +39,23 @@ class Coronavirus19herokuFetcher: StatsFetching {
                 let stats = try decoder.decode(Stats.self, from: data)
                 completion(.success(stats))
             } catch {
+                error.log()
                 completion(.failure(error))
             }
             
         }
         
         dataTask.resume()
+    }
+}
+
+private extension Error {
+    func log() {
+        os_log(
+            "%{public}@",
+            log: OSLog.networking,
+            type: .error,
+            self.localizedDescription
+        )
     }
 }
