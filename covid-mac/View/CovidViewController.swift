@@ -62,8 +62,17 @@ extension CovidViewController: NSTouchBarDelegate {
         _ touchBar: NSTouchBar,
         makeItemForIdentifier identifier: NSTouchBarItem.Identifier
     ) -> NSTouchBarItem? {
-        guard let stats = viewModel.stats else { return nil }
         let custom = NSCustomTouchBarItem(identifier: identifier)
+
+        guard let stats = viewModel.stats else {
+            if identifier == .allCasesItem {
+                let label = NSTextField(labelWithString: "Error")
+                label.textColor = .systemRed
+                custom.view = label
+                return custom
+            }
+            return nil
+        }
         
         switch identifier {
         case .allCasesItem:
