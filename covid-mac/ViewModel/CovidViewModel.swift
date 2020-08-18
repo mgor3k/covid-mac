@@ -18,11 +18,12 @@ extension CovidViewModel {
         country.capitalizingFirstLetter()
     }
     
-    func setCountry(_ country: String) {
+    func changeCountry(_ country: String) {
         self.country = country
+        startFetching()
     }
     
-    func fetchStats() {
+    func startFetching() {
         timer?.invalidate()
         
         fetch()

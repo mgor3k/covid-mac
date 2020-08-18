@@ -32,14 +32,12 @@ class CovidViewController: NSViewController {
     }
     
     @IBAction func setButtonTapped(_ sender: Any) {
-        viewModel.setCountry(countryTextField.stringValue)
-        viewModel.fetchStats()
+        viewModel.changeCountry(countryTextField.stringValue)
     }
 }
 
 private extension CovidViewController {
     func setupFetching() {
-        viewModel.fetchStats()
         viewModel.statsDidUpdate = { [weak self] result in
             switch result {
             case .success:
@@ -50,6 +48,8 @@ private extension CovidViewController {
             }
             self?.invalidateTouchBar()
         }
+        
+        viewModel.startFetching()
     }
     
     func invalidateTouchBar() {
