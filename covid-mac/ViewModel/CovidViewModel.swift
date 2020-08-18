@@ -8,6 +8,9 @@ class CovidViewModel {
     private let api: StatsFetching = Coronavirus19herokuFetcher(session: URLSession.shared)
     private var country = "Poland"
     private(set) var stats: Stats?
+    private var timer: Timer?
+    
+    var statsDidUpdate: StatsCompletion?
 }
 
 extension CovidViewModel {
@@ -19,7 +22,21 @@ extension CovidViewModel {
         self.country = country
     }
     
-    func fetchStats(completion: @escaping StatsCompletion) {
+    func fetchStats() {
+        timer?.invalidate()
+        
+        fetch()
+        timer = Timer.scheduledTimer(
+            withTimeInterval: 60 * 60,
+            repeats: true)
+        { [weak self] timer in
+            self?.fetch()
+        }
+    }
+}
+
+private extension CovidViewModel {
+    func fetch() {
         api.fetchData(for: country) { [weak self] result in
             switch result {
             case .success(let stats):
@@ -28,7 +45,7 @@ extension CovidViewModel {
                 self?.stats = nil
             }
             DispatchQueue.main.async {
-                completion(result)
+                self?.statsDidUpdate?(result)
             }
         }
     }

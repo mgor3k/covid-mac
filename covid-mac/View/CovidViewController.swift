@@ -13,7 +13,7 @@ class CovidViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         countryTextField.stringValue = viewModel.countryName
-        fetchStats()
+        setupFetching()
     }
     
     @available(OSX 10.12.2, *)
@@ -33,13 +33,14 @@ class CovidViewController: NSViewController {
     
     @IBAction func setButtonTapped(_ sender: Any) {
         viewModel.setCountry(countryTextField.stringValue)
-        fetchStats()
+        viewModel.fetchStats()
     }
 }
 
 private extension CovidViewController {
-    func fetchStats() {
-        viewModel.fetchStats() { [weak self] result in
+    func setupFetching() {
+        viewModel.fetchStats()
+        viewModel.statsDidUpdate = { [weak self] result in
             switch result {
             case .success:
                 self?.errorLabel.isHidden = true
