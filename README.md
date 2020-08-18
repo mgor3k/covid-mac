@@ -2,3 +2,7 @@
 
 
 # covid-mac
+
+Touchbar app made for the lolz
+
+![Imgur](https://i.imgur.com/PXFgV0m.png)
