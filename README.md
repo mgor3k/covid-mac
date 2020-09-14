@@ -3,6 +3,6 @@
 
 # covid-mac
 
-Touchbar app made for the lolz
+Simple touchbar app (first app made for mac)
 
 ![Imgur](https://i.imgur.com/PXFgV0m.png)
